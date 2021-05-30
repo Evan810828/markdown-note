@@ -1,7 +1,7 @@
 # React 学习笔记_2021/5/29
 
-*第一步：要使用 React 进行网站开发，首先需要配置 Node.js 环境*
-
+*第一步：要使用 React 进行网站开发，首先需要配置 Node.js 环境*<br/>
+下载 ```Node.js``` https://nodejs.org/en/
 
 # Node js
 
