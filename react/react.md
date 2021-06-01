@@ -52,3 +52,10 @@ npm 包管理器是内置在 Node.js 框架内的
 **注<br/>**
 npm 和 yarn 的选择：<br/>
 无脑选择 yarn 即可 https://zhuanlan.zhihu.com/p/27449990
+
+
+# React 学习笔记_2021/6/2
+
+# Clss 组件的生命周期
+
+# render 函数
