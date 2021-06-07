@@ -69,6 +69,8 @@ git config --global user.email "emailaddress"
 3. **Modified**: 又叫非暂存区，存放着已被追踪，已被修改，但在 git 仓库中尚未被暂存的文件
 4. **Staged**: 又叫暂存区，存放着已被暂存的文件
 
+![](lifecycle.png)
+
 ### 2.3.1 检查文件状态
 详细状态 `git status`<br/>
 ```
