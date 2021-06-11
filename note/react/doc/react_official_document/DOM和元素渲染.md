@@ -18,7 +18,7 @@ DOM 全称 Document Object Model，即文档对象模型<br/>
 
 *DOM的数据结构通常被理解为**树**，因此DOM又可以称为DOM树*
 
-![](\DOM_tree.jpg)
+![](.\DOM_tree.jpg)
 
 ## 2. 浏览器根据 DOM 进行页面布局 
 
