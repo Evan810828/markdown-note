@@ -16,7 +16,7 @@ DOM构造、布局以及绘制页面，最终展现为人人都能看懂的网�
 DOM 全称 Document Object Model，即文档对象模型<br/>
 当浏览器接收到一个HTML文档时，会将文档转化为一个文档对象，用这个对象来理页面内容
 
-*DOM的数据结构是**树**，因此DOM又可以称为DOM树*
+*DOM的数据结构通常被理解为**树**，因此DOM又可以称为DOM树*
 
 ![](./DOM_tree.jpg)
 
@@ -30,3 +30,44 @@ DOM 全称 Document Object Model，即文档对象模型<br/>
 文档流排完之后，开始获取计算节点的坐标和大小等CSS属性，作为盒子的包装说明。<br/>
 然后把盒子在仓库里一一摆放，这就将节点布局到了页面。
 
+
+# React 的元素渲染
+
+在 React 框架中我们使用 **JSX** 语言 ( Facebook开发的一款“Js方言” )<br/>
+然后由 **Babel** 编译器来将 JSX 语言转译成一个名为 `React.createElement()` 的函数调用<br/>
+
+以下两种示例代码完全等效：
+
+```
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+```
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
+
+然后 `React.createElement()` 会创建一个 **React 元素**<br/>
+React 通过读取这些元素来更新 DOM
+
+
+(相关文章：Babel的编译过程 https://zhuanlan.zhihu.com/p/27289600)
+
+React 元素一旦被创建就不能再进行变更<br/>
+下一步想要更新页面的UI，就需要调用 `ReactDOM.render()`<br/>
+
+```
+ReactDOM.render(element, document.getElementById("id"));
+
+// element 是对象名，id则决定了需要选择渲染的位置
+```
+
+React 只更新它需要更新的部分<br/>
+React DOM 会将元素和它的子元素与它们之前的状态进行比较<br/>
+并只会进行必要的更新来使 DOM 达到预期的状态
