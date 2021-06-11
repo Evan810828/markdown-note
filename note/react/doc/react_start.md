@@ -13,4 +13,4 @@ npm start
 
 **注<br/>**
 npm 和 yarn 的选择：<br/>
-无脑选择 yarn 即可 https://zhuanlan.zhihu.com/p/27449990
+https://zhuanlan.zhihu.com/p/27449990
