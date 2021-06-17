@@ -42,4 +42,8 @@ export default class Index extends React.Component{
 }
 ```
 而若需要使用 React 组件，就必须要继承 React.Component 类<br/>
-因此，我们在进行父子组件传参的时候，在 constructor 构造函数中，一定要加入 super() 字段
+要实现继承只需要在声明class时加上 `extend` 关键字
+
+但是如果想要实现 class 组件之间传参，我们一般需要重写 (overwrite) `constructor` 构造函数
+
+因此，我们在进行父子组件传参的时候，在 `constructor` 构造函数中，一定要加入 super() 字段
