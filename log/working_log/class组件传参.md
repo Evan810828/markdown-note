@@ -47,3 +47,6 @@ export default class Index extends React.Component{
 但是如果想要实现 class 组件之间传参，我们一般需要重写 (overwrite) `constructor` 构造函数
 
 因此，我们在进行父子组件传参的时候，在 `constructor` 构造函数中，一定要加入 super() 字段
+
+
+现已更新 [React 组合与继承 & Context](../../note/react/doc/react_official_document/组合与继承&Context.md)
