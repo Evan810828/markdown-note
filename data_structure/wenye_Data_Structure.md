@@ -148,7 +148,7 @@ type[ ] identifier = new type[length];
 
 1. 在操作linked list的nodes时，需要注意操作顺序
 
-   我们在进行任何操作时都只有一个可供参考的指针（无论是head，还是自行建立的current），因此在添加new node时，如果添加处后面还有其他元素，<u>必须先将new node的next指针接上后续list，再将我们的参考指针指向new node</u>
+   我们在进行任何操作时都只有一个可供参考的指针（无论是head，还是自行建立的current），因此在添加new node时，<u>如果添加处后面还有其他元素，必须先将new node的next指针接上后续list，再将我们的参考指针指向new node</u>
 
 2. 每次进行iteration都一定要记得判断next指针的对象是否为null
 
@@ -172,4 +172,68 @@ type[ ] identifier = new type[length];
    ![image-20211030224850304](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030224850304.png)
 
    ![image-20211030224901824](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030224901824.png)
+
+
+
+<h1>Chapter 4</h1>
+
+<h2>Stack</h2>
+
++ A Stack is an abstract data type with a pre-defined capacity
++ **LIFO** (Last In, First Out)
++ Stack has one end. It contains only one pointer top pointer pointing to the topmost element of the stack.
+
+![image-20211031111557802](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211031111557802.png)
+
+**Implementations & Operations**
+
+1. push:
+
+   check if the stack is full, top = top + 1
+
+   若用linked list记得先令 `newNode.next = top`
+
+2. pop:
+
+   check if the stack is empty, top = top - 1
+
+![image-20211031112930722](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211031112930722.png)
+
+
+
+<h2>Queue</h2>
+
++ insert operations to be performed at one end called **REAR**
++ delete operations to be performed at another end called **FRONT**
++ Queue is referred to be as First In First Out list (**FIFO**)
+
+**Operations**
+
+1. Enqueue: Insert the element at the rear end of the queue. It returns void. 
+
+   > + Check if the queue is already full by comparing rear to max - 1
+   >
+   > + If the item is to be inserted as the first element in the list, in that case set the value of front and rear to 0 and insert the element at the rear end. 
+
+   ![image-20211031113748833](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211031113748833.png)
+
+2. Dequeue: Delete from the front-end of the queue. It returns the element which has been removed from the front-end. 
+
+   > If, the value of front is -1 or value of front is greater than rear , write an underflow message and exit.
+
+   ![image-20211031113955098](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211031113955098.png)
+
+3. Peek: Return the element, which is pointed by the front pointer in the queue but does not delete it. 
+
+4. Queue overflow (isfull):When the queue is completely full,thenit shows the overflow condition. 
+
+5. Queue underflow (isempty): When the queue is empty, it throws the underflow condition.
+
+
+
+An insertion takes place from the rear while the deletion occurs from the front
+
+> + Drawback: insertion is done only from the rear end (**front之前的内存空间被浪费**)
+>
+> If the first three elements are deleted from the queue, we cannot insert more elements even though the space is available in a linear queue. The linear queue shows the overflow condition as the rear is pointing to the last element of the queue.
 
