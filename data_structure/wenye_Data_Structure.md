@@ -8,7 +8,7 @@
 
 **word:** the number of bytes and the order of bytes in a word vary from machine to 		machine
 
-![image-20211030200632892](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030200632892.png)
+![image-20211030200632892](./typora-user-images/image-20211030200632892.png)
 
 **static data:** never created or destroyed as program runs, such as named constants
 
@@ -28,11 +28,11 @@
 
 <u>In java, primitive types and objects are passed differently as arguments</u>
 
-![image-20211030204136747](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030204136747.png)
+![image-20211030204136747](./typora-user-images/image-20211030204136747.png)
 
 When you pass an argument of a **primitive type** to a method, Java copies the **value** of the argument into the parameter variable. As a result, changes to the parameter variable have **no effect** on the argument.
 
-![image-20211030204151176](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030204151176.png)
+![image-20211030204151176](./typora-user-images/image-20211030204151176.png)
 
 When you pass an **object** as an argument, java copies the **reference** of the argument into that parameter variable. Thus, any changes that you make to the instance variables *inside* an object have a permanent effect on the object.
 
@@ -70,9 +70,9 @@ type[ ] identifier = new type[length];
 
 2. Two-dimensional array
 
-   ![image-20211030213642331](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030213642331.png)
+   ![image-20211030213642331](./typora-user-images/image-20211030213642331.png)
 
-3. ![image-20211030215136516](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030215136516.png)
+3. ![image-20211030215136516](./typora-user-images/image-20211030215136516.png)
 
    An array containing ASCII codes for each character in the string.
 
@@ -127,11 +127,11 @@ type[ ] identifier = new type[length];
 
 1. Polynomial
 
-   ![image-20211030221341639](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030221341639.png)
+   ![image-20211030221341639](./typora-user-images/image-20211030221341639.png)
 
 2. Sparse Matrix
 
-   ![image-20211030221432426](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030221432426.png)
+   ![image-20211030221432426](./typora-user-images/image-20211030221432426.png)
 
 
 
@@ -161,17 +161,17 @@ type[ ] identifier = new type[length];
 
 1. different start point
 
-   ![image-20211030224148744](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030224148744.png)
+   ![image-20211030224148744](./typora-user-images/image-20211030224148744.png)
 
 2.  different speed
 
-   ![image-20211030224302621](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030224302621.png)
+   ![image-20211030224302621](./typora-user-images/image-20211030224302621.png)
 
 3. two ways to reverse a linked list from a certain node
 
-   ![image-20211030224850304](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030224850304.png)
+   ![image-20211030224850304](./typora-user-images/image-20211030224850304.png)
 
-   ![image-20211030224901824](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211030224901824.png)
+   ![image-20211030224901824](./typora-user-images/image-20211030224901824.png)
 
 
 
@@ -183,7 +183,7 @@ type[ ] identifier = new type[length];
 + **LIFO** (Last In, First Out)
 + Stack has one end. It contains only one pointer top pointer pointing to the topmost element of the stack.
 
-![image-20211031111557802](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211031111557802.png)
+![image-20211031111557802](./typora-user-images/image-20211031111557802.png)
 
 **Implementations & Operations**
 
@@ -197,7 +197,7 @@ type[ ] identifier = new type[length];
 
    check if the stack is empty, top = top - 1
 
-![image-20211031112930722](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211031112930722.png)
+![image-20211031112930722](./typora-user-images/image-20211031112930722.png)
 
 
 
@@ -215,13 +215,13 @@ type[ ] identifier = new type[length];
    >
    > + If the item is to be inserted as the first element in the list, in that case set the value of front and rear to 0 and insert the element at the rear end. 
 
-   ![image-20211031113748833](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211031113748833.png)
+   ![image-20211031113748833](./typora-user-images/image-20211031113748833.png)
 
 2. Dequeue: Delete from the front-end of the queue. It returns the element which has been removed from the front-end. 
 
    > If, the value of front is -1 or value of front is greater than rear , write an underflow message and exit.
 
-   ![image-20211031113955098](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211031113955098.png)
+   ![image-20211031113955098](./typora-user-images/image-20211031113955098.png)
 
 3. Peek: Return the element, which is pointed by the front pointer in the queue but does not delete it. 
 
@@ -237,3 +237,34 @@ An insertion takes place from the rear while the deletion occurs from the front
 >
 > If the first three elements are deleted from the queue, we cannot insert more elements even though the space is available in a linear queue. The linear queue shows the overflow condition as the rear is pointing to the last element of the queue.
 
+
+
+<h2>Circular Queue</h2>
+
++ the last element of the queue is connected to the first element
+
++ Drawback that occurs in a linear queue is overcome. 
+
+  If the empty space is available in a circular queue, the new element can be added in an empty space by simply incrementing the value of rear
+
+**Operations**
+
+1. Enqueue:
+
+   First, check whether the queue is full or not. 
+
+   Initially set both front and rear to -1. To insert the first element, both front and rear are set to 0. 
+
+   To insert a new element, the rear gets incremented.
+
+   ![image-20211031144647719](C:/Users/86183/AppData/Roaming/Typora/typora-user-images/image-20211031144647719.png)
+
+2. Dequeue:
+
+   First, check whether the queue is empty or not. If the queue is empty, we cannot perform the dequeue operation. 
+
+   When the element is deleted, the value of front gets decremented by 1. 
+
+   If there is only one element left which is to be deleted, then the front and rear are reset to -1.
+
+![image-20211031144549301](C:/Users/86183/AppData/Roaming/Typora/typora-user-images/image-20211031144549301.png)
