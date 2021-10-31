@@ -239,7 +239,7 @@ An insertion takes place from the rear while the deletion occurs from the front
 
 
 
-<h2>Circular Queue</h2>
+<h3>Circular Queue</h3>
 
 + the last element of the queue is connected to the first element
 
@@ -268,3 +268,69 @@ An insertion takes place from the rear while the deletion occurs from the front
    If there is only one element left which is to be deleted, then the front and rear are reset to -1.
 
 ![image-20211031144549301](C:/Users/86183/AppData/Roaming/Typora/typora-user-images/image-20211031144549301.png)
+
+
+
+<h3>Priority Queue</h3>
+
++ The priority of the elements in a priority queue will determine the order in which elements are removed from the priority queue.
+
+  The element with the highest priority would come first in a priority queue.
+
+  If two elements in a priority queue have the same priority, they will be arranged using the FIFO principle.
+
++ The elements are either arranged in an ascending or descending order
+
+**Operations**
+
+![image-20211031145321416](./typora-user-images/image-20211031145321416.png)
+
+**Implementation**
+
+> There are 4 ways to implement priority queue:
+>
+> 1. array
+> 2. linked list
+> 3. heap data structure
+> 4. binary search tree
+>
+> <u>The heap data structure is the most efficient way</u>
+
+
+
+<h3>Double Ended Queue</h3>
+
++ Does not follow the FIFO principle
+
++ Insertion and deletion can occur from both ends
+
+  + Input-restricted
+
+    ![image-20211031145800699](./typora-user-images/image-20211031145800699.png)
+
+  + Output-restricted
+
+    ![image-20211031145813070](./typora-user-images/image-20211031145813070.png)
+
++ Can be used both as stack and queue
+
+**Operations**
+
+1. enqueue_front(): It is used to insert the element from the front end. 
+
+2. enqueue_rear(): It is used to insert the element from the rear end. 
+
+3. dequeue_front(): It is used to delete the element from the front end. 
+
+4. dequeue_rear(): It is used to delete the element from the rear end. 
+5. getfront(): It is used to return the front element of the deque. 
+6. getrear(): It is used to return the rear element of the deque
+
+
+
+**Queue - Applications**
+
++ Implement stack with queue
+
+  ![image-20211031150902884](./typora-user-images/image-20211031150902884.png)
+
