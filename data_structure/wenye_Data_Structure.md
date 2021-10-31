@@ -257,7 +257,7 @@ An insertion takes place from the rear while the deletion occurs from the front
 
    To insert a new element, the rear gets incremented.
 
-   ![image-20211031144647719](C:/Users/86183/AppData/Roaming/Typora/typora-user-images/image-20211031144647719.png)
+   ![image-20211031144647719](.\typora-user-images\image-20211031144647719.png)
 
 2. Dequeue:
 
@@ -267,7 +267,7 @@ An insertion takes place from the rear while the deletion occurs from the front
 
    If there is only one element left which is to be deleted, then the front and rear are reset to -1.
 
-![image-20211031144549301](C:/Users/86183/AppData/Roaming/Typora/typora-user-images/image-20211031144549301.png)
+![image-20211031144549301](.\typora-user-images\image-20211031144549301.png)
 
 
 
