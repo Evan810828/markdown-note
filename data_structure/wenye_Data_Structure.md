@@ -334,3 +334,261 @@ An insertion takes place from the rear while the deletion occurs from the front
 
   ![image-20211031150902884](./typora-user-images/image-20211031150902884.png)
 
+
+
+<h1>Final Exam</h1>
+
+> 20-30% for first half; 70-80% for second half.
+>
+> chapter 1. introduction.
+> no special questions on java.
+>
+> chapter 2. memory and array
+> stack memory and heap memory basic knowledge.
+> address model for array.
+> reference/pointer concept.
+> one-dimensionary array, two-dimensionary array, sparse array.
+> index of arrays.
+>
+> chapter 3. linked list
+> array vs linked list: advantages and disadvantages.
+> sparse array as linked list.
+> singly lisked list, doubly linked list, circular linked list.
+> operations.
+>
+> chapter 4. stack and queue
+> stack vs queue: characteristics and differences.
+> operations.
+> linear queue, circular queue, priority queue.
+>
+> chapter 5. tree
+> nonlinear vs linear data structures.
+> tree concepts: root, children, parent, sibling, internal, leaves, ancestor, descendants.
+> binary tree and implementation: full/complete/perfect/balanced.
+> binary search tree: create bst, traversal (inorder, preorder, postorder).
+> huffman tree
+>
+> chapter 6. graph
+> concept: G=(V,E).
+> undirected vs directed.
+> complete, weighted graphs.
+> representation: adjacency matrix, adjacency list.
+> traversal: breath-first search, depth-first search.
+> minimum spanning tree: Kruskal's algorithm, Prim's algorithm.
+> topological sorting.
+>
+> chapter 7. not for exam.
+>
+> chapter 8. sorting
+> simple sorting: bubble sort, selection sort, insertion sort.
+> advanced sorting: merge sort, quick sort.
+> complexity.
+>
+> others: complexity concepts
+
+
+
+<h1>Complexity</h1>
+
+**Algorithm:** An algorithm is a finite set of instructions that performs a certain computation or solve a problem
+
+In general, we are not so much interested in the time and space complexity for small inputs. What is important is the growth of the complexity functions.
+
+**Growth Function:**
+
+> **Definition:** Let *f* and *g* be functions from the integers or the real numbers to the real
+>
+> ​					 numbers. We say that *f(x)* is *O(g(x))* if there are constants *C* and *k* such that
+>
+> ​												***|f(x)|* *≤* *C|g(x)|,* whenever *x > k*.**
+
+![image-20211217190358408](./typora-user-images/image-20211217190358408.png)
+
+**tractable:** A problem that can be solved with polynomial worst-case complexity
+
+**unsolvable:** Problems that no algorithm can solve
+
+> Computations
+>
+> If *f**1**(x)* is *O(g**1**(x))* and *f**2**(x)* is *O(g**2**(x))*, then *(f**1* *+ f**2**)(x)* is *O(max(g**1**(x), g**2**(x))).*
+>
+> If *f**1**(x)* is *O(g(x))* and *f**2**(x)* is *O(g(x))*, then *(f**1* *+ f**2**)(x) is O(g(x))*.
+>
+> If *f**1**(x)* is *O(g**1**(x))* and *f**2**(x)* is *O(g**2**(x))*, then *(f**1**f**2**)(x) is O(g**1**(x) g**2**(x))*
+
+
+
+<h1>Chapter 5</h1>
+
+<h2>Tree</h2>
+
+**Tree data:** a collection of objects or entities known as nodes that are linked together to represent or simulate <u>hierarchy</u>
+
+Not a linear structure since it is not stored in a sequence manner
+
++ **Root node:** the topmost node in a tree
+
++ **Child node:** if the node is a descendant of any node, it is a child node
++ **Parent node:** if the node has a sub-node, it is a parent node
++ **Sibling:** The nodes that have the same parent are known as siblings
++ **Leaf node:** The node of the tree, which doesn't have any child node, is called a leaf node
++ **Internal node:** A node has at least one child node known as an internal node
++ **Ancestor node:** An ancestor of a node is any predecessor node on a path from the root to that node.
++ **Descendant:** The immediate successor of the given node is known as a descendant of a node
++ **Number of edges:** If there are *n* nodes, then there would *n-1* edges
++ **Depth of node *x***: the length of the path from the root to node *x*
++ **Height of node *x*:** the longest path from the node *x* to the leaf node, 层数-1
+
+
+
+<h3>Binary Tree</h3>
+
+A node can have at most 2 children
+
+h + 1 <= number of nodes <= 2^(h+1) - 1
+
+**1. Full Binary Tree**
+
+Each node contains either zero or two children
+
+2h + 1 <= number of nodes <= 2^(h+1) - 1
+
+**2. Complete Binary Tree**
+
+All nodes are completely filled except the last level. In the last level, all nodes must be as left as possible
+
+![image-20211217200346423](./typora-user-images/image-20211217200346423.png)
+
+2^h + 1 <= number of nodes <= 2^(h+1) - 1
+
+**3. Perfect Binary Tree**
+
+All internal nodes have 2 children, and all leaf nodes are at the same level
+
+![image-20211217200724674](./typora-user-images/image-20211217200724674.png)
+
+number of nodes = 2^(h+1) - 1
+
+All perfect binary trees are complete binary trees as well as full binary trees
+
+**4. Balanced Binary Tree**
+
+A binary tree in which the left and right subtrees of every node differ in height by no more than 1
+
+![image-20211217201055766](./typora-user-images/image-20211217201055766.png)
+
+**5. Balanced Search Tree**
+
+A class of binary trees, in which the nodes are arranged in a specific order, also called ordered binary tree
+
+left child <= parent <= right child
+
+搜索二叉树的构建：以列表第一个元素为root，后续依次比较插入
+
+
+
+<h3>Traversal of Binary Tree</h3>
+
+**1. in-oder Traversal** 中序遍历
+
+Left Root Right
+
+![image-20211217203909430](./typora-user-images/image-20211217203909430.png)
+
+**2. pre-order Traversal** 前序遍历
+
+Root Left Right
+
+![image-20211217203858666](./typora-user-images/image-20211217203858666.png)
+
+**3. post-order Traversal**
+
+Left Right Root
+
+![image-20211217203848103](./typora-user-images/image-20211217203848103.png)
+
+
+
+<h3>Implementation</h3>
+
+`insert()`: 
+
++ if less than the root then iterate into left subtree; otherwise iterate into the right subtree. If the iterated direction is null, then plug there
+
+![image-20211217205516044](./typora-user-images/image-20211217205516044.png)
+
+`delete()`:
+
+1. If the node to delete is a leaf node, parent of that node will point to null. 
+
+2. If the node to delete has one child node, the child node will become a child node of the parent node. 
+
+3. If the node to delete has two children, find min-Node with minimum value from the right subtree of the current node. The current node is replaced by min-Node.
+
+![image-20211217205535139](./typora-user-images/image-20211217205535139.png)
+
+
+
+<h1>Chapter 6 Graph</h1>
+
+**Graph:** a group of vertices and edges that are used to connect these vertices
+
+A graph G can be defined as an ordered set G(V, E)
+
++ V(G) represents the set of vertices
+
++ E(G) represents the set of edges which are used to connect these vertices
+
+**Directed:** Edges represent a specific path from some vertex A(initial node) to another vertex B(terminal node)
+
+**Path:** a sequence of edges connecting initial node V0 to terminal node VN
+
+**Closed Path:** A path where the initial node is same as terminal node, i.e, V0=VN
+
+**Simple Path:** all the nodes of the path are distinct, with the exception V0=VN
+
+> **Closed Simple Path:** a simple path with V0=VN
+
+**Cycle:** a path which has <u>no repeated edges</u> or vertices except the first and last vertices
+
+**Adjacent Nodes/Neighbors:** two nodes u and v are connected via an edge e
+
+**Degree of a Node:** the number of edges that are connected with the node
+
+**Connected Graph:** a graph in which a path exists between every two vertices (u, v) in V
+
+**Complete Graph**: a graph in which there is an edge between each pair of vertices
+
+**Weighted Graph:** each edge is assigned with some data such as length or weight
+
+
+
+<h3>Representations</h3>
+
+**1. Sequential**
+
+1.1 Undirected
+
+![image-20211217215705517](./typora-user-images/image-20211217215705517.png)
+
+1.2 Directed
+
+![image-20211217215803174](./typora-user-images/image-20211217215803174.png)
+
+1.3 Weighted
+
+![image-20211217215825272](./typora-user-images/image-20211217215825272.png)
+
+**2. Linked**
+
+2.1 Undirected
+
+![image-20211217215916254](./typora-user-images/image-20211217215916254.png)
+
+2.2 Directed
+
+![image-20211217215956772](./typora-user-images/image-20211217215956772.png)
+
+2.3 Weighted
+
+![image-20211217220010571](./typora-user-images/image-20211217220010571.png)
