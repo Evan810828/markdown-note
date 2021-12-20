@@ -529,6 +529,12 @@ Left Right Root
 
 
 
+<font color="red">Examples!!!!!</font>
+
+
+
+
+
 <h1>Chapter 6 Graph</h1>
 
 **Graph:** a group of vertices and edges that are used to connect these vertices
@@ -592,3 +598,203 @@ A graph G can be defined as an ordered set G(V, E)
 2.3 Weighted
 
 ![image-20211217220010571](./typora-user-images/image-20211217220010571.png)
+
+
+
+<h3>Traversal Strategy</h3>
+
+**1. DFS 深度优先** 
+
+![image-20211218174246324](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211218174246324.png)
+
+DFS for Binary trees
+
+```pseudocode
+// recursive
+function DFS(Node):
+	visit Node
+	If Node has children:
+        if Node has right child: // first left and then right
+			DFS(left child)
+		if Node has left child:
+			DFS(right child)
+    return
+    
+// non-recursive
+Global Stack
+function DFS(Node):
+	Stack.push(Node)
+	while Stack is not empty:
+		next_Node = Stack.pop()
+		visit next_Node
+		if next_Node has right child: // first right and then left
+			Stack.push(right child)
+		if next_Node has left child:
+			Stack.push(left child)
+	return
+```
+
+
+
+DFS for graphs
+
+```pseudocode
+// recursive
+Global visited = []
+function DFS(Node):
+	visit Node
+	visited.add(Node)
+    next_Node = get an unvisited neighbor of Node
+	while next_Node exists:
+		DFS(next_Node)
+		next_Node = get an unvisited neighbor of Node
+    return
+
+// non-recursive
+Global Stack
+Global visited = []
+function DFS(Node):
+	visit Node
+	Stack.push(Node)
+	visited.add(Node)
+	while Stack is not empty:
+        next_Node = get an unvisited neighbor of Stack.peek()
+        if next_Node exists:
+        	visit next_Node
+        	Stack.push(next_Node)
+        	visited.add(next_Node)
+        else:
+        	Stack.pop()
+	return
+```
+
+**2. BFS 广度优先**
+
+![image-20211218185349626](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211218185349626.png)
+
+BFS for binary trees
+
+```pseudocode
+// non-recursive
+Global Queue
+function BFS(Node):
+	Queue.enqueue(Node)
+	while Queue is not empty:
+		next_Node = Queue.dequeue()
+		visit next_Node
+		if next_Node has left child: // first left then right
+			Queue.enqueue(left child)
+		if next_Node has right child:
+        	Queue.enqueue(right child)
+	return
+```
+
+BFS for graphs
+
+```pseudocode
+// non-recursive
+Global Queue
+Global visited = []
+function BFS(Node):
+	visit Node
+	visited.add(Node)
+	Queue.enqueue(Node)
+	while Queue is not empty:
+		next_Node = get an unvisited neighbor of Queue.peek()
+		if next_Node exists:
+			visit next_Node
+			visited.add(next_Node)
+			Queue.enqueue(next_Node)
+		else:
+			Queue.dequeue()
+	return
+```
+
+
+
+<h3>Spanning Tree</h3>
+
+**Spanning tree:** for any connected set of vertices and edges, remove any extra edges
+
+**Minimum spanning tree:** the spanning tree whose sum  of edge weights is minimum
+
++ number of edges = number of vertices - 1
+
++ The spanning tree does not contain any cycle
++ If two or three edges have the same edge weight, then there would be more than two minimum spanning trees
++ A complete undirected graph can have **n^(n-2)** number of spanning trees where n is the number of vertices
+
+![image-20211218192239683](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211218192239683.png)
+
+MST can be obtained with a slight modification of depth-first  search,  or breadth-first search.
+
+![image-20211218192640336](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211218192640336.png)
+
+
+
+**Generating a minimum spanning tree**
+
+1. KRUSKAL’S ALGORITHM
+
++ put the smallest weight edge without forming a cycle in the MST constructed so far
+
++ The complexity of the algorithm is O(|E| log |E|) = O (|E| log |V|).
+
+![image-20211218193158781](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211218193158781.png)
+
+
+
+2. PRIM’S ALGORITHM
+
++ At every step, it considers all edges and picks the minimum weight edge. After picking the edge, it moves the other endpoint of edge to set containing MST
+
++ 使用**邻接矩阵**作为存储结构的Prim算法的时间复杂度为O(V2)，如果使用**二叉堆与邻接表**表示的话，Prim算法的时间复杂度可缩减为O(E log V)
+
+![image-20211218194115331](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211218194115331.png)
+
+
+
+<h3>Topological Sorting</h3>
+
+**aim:** Arrange events in a specific order
+
+**algorithm:**
+
+> 1. Repeat until all vertices are gone
+>
+>    + Find a vertex that has no successors. 
+>
+>    + Delete this vertex from the graph, and
+>
+> 2. insert its label at the beginning of a list. 
+
+Topological-sort cannot handle a graph with cycles
+
+![image-20211219222906473](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211219222906473.png)
+
+
+
+<h1>Chapter 8 Sorting</h1>
+
+<h3>1. simple sorting</h3>
+
+<h4>1.1 Bubble Sort</h4>
+
+> 1. Compare two players.
+> 2. If the one on the left is taller, swap them.
+> 3. Move one position right.
+> 4. When you reach the first sorted player, start over at the left end of the line.
+> 5. Continue this process until all players are in order.
+
+<h4>1.2 Selection Sort</h4>
+
+> 1. Making a pass through all players and picking the shortest one. This shortest player is then swapped with the player on the left end of the line, at position 0.
+> 2. The next time you pass down the players, you start at position 1, and, finding the minimum, swap with position 1. 
+> 3. This process continues until all players are sorted.
+
+<h4>1.3 Insertion Sort</h4>
+
+> 1. 假设前面 **n-1**(其中 **n>=2**)个数已经是排好顺序的，现将第 **n** 个数插到前面已经排好的序列中，然后找到合适自己的位置，使得插入第n个数的这个序列也是排好顺序的
+> 2. 按照此法对所有元素进行插入，直到整个序列排为有序的过程
+
+<font color="red">Examples!!!!!</font>
