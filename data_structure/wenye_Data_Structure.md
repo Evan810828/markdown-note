@@ -6,7 +6,7 @@
 
 **byte:** the smallest unit on which the hardware operates, 8 consecutive bits
 
-**word:** the number of bytes and the order of bytes in a word vary from machine to 		machine
+**word:** the number of bytes and the order of bytes in a word vary from machine to machine
 
 ![image-20211030200632892](./typora-user-images/image-20211030200632892.png)
 
@@ -30,7 +30,7 @@
 
 ![image-20211030204136747](./typora-user-images/image-20211030204136747.png)
 
-When you pass an argument of a **primitive type** to a method, Java copies the **value** of the argument into the parameter variable. As a result, changes to the parameter variable have **no effect** on the argument.
+When you pass an argument of a **primitive type** to a method, Java copies the **value** of the argument into the parameter variable. As a result, changes to the parameter variable have **no effect** on the orignial argument.
 
 ![image-20211030204151176](./typora-user-images/image-20211030204151176.png)
 
@@ -101,9 +101,8 @@ type[ ] identifier = new type[length];
 
 3. Memory efficient:
 
-   Its memory consumption is efficient as the size of the linked list can grow
+   Its memory consumption is efficient as the size of the linked list can grow or shrink according to our requirements.
 
-   or shrink according to our requirements.
 
 > Disadvantages
 
@@ -189,7 +188,7 @@ type[ ] identifier = new type[length];
 
 1. push:
 
-   check if the stack is full, top = top + 1
+   check whether the stack is full, top = top + 1
 
    若用linked list记得先令 `newNode.next = top`
 
@@ -225,7 +224,7 @@ type[ ] identifier = new type[length];
 
 3. Peek: Return the element, which is pointed by the front pointer in the queue but does not delete it. 
 
-4. Queue overflow (isfull):When the queue is completely full,thenit shows the overflow condition. 
+4. Queue overflow (isfull):When the queue is completely full, it shows the overflow condition. 
 
 5. Queue underflow (isempty): When the queue is empty, it throws the underflow condition.
 
@@ -410,9 +409,9 @@ In general, we are not so much interested in the time and space complexity for s
 
 > Computations
 >
-> If *f**1**(x)* is *O(g**1**(x))* and *f**2**(x)* is *O(g**2**(x))*, then *(f**1* *+ f**2**)(x)* is *O(max(g**1**(x), g**2**(x))).*
+> If *f**1**(x)* is *O(g**1**(x))* and *f**2**(x)* is *O(g**2**(x))*, then *(f**1** + f**2**)(x)* is *O(max(g**1**(x), g**2**(x))).*
 >
-> If *f**1**(x)* is *O(g(x))* and *f**2**(x)* is *O(g(x))*, then *(f**1* *+ f**2**)(x) is O(g(x))*.
+> If *f**1**(x)* is *O(g(x))* and *f**2**(x)* is *O(g(x))*, then *(f**1*** *+ f**2**)(x) is O(g(x))*.
 >
 > If *f**1**(x)* is *O(g**1**(x))* and *f**2**(x)* is *O(g**2**(x))*, then *(f**1**f**2**)(x) is O(g**1**(x) g**2**(x))*
 
@@ -477,11 +476,9 @@ A binary tree in which the left and right subtrees of every node differ in heigh
 
 ![image-20211217201055766](./typora-user-images/image-20211217201055766.png)
 
-**5. Balanced Search Tree**
+**5. Binary Search Tree**
 
-A class of binary trees, in which the nodes are arranged in a specific order, also called ordered binary tree
-
-left child <= parent <= right child
+A class of binary trees, in which the nodes are arranged in a specific order, also called ordered binary tree left child <= parent <= right child
 
 搜索二叉树的构建：以列表第一个元素为root，后续依次比较插入
 
@@ -797,4 +794,6 @@ Topological-sort cannot handle a graph with cycles
 > 1. 假设前面 **n-1**(其中 **n>=2**)个数已经是排好顺序的，现将第 **n** 个数插到前面已经排好的序列中，然后找到合适自己的位置，使得插入第n个数的这个序列也是排好顺序的
 > 2. 按照此法对所有元素进行插入，直到整个序列排为有序的过程
 
-<font color="red">Examples!!!!!</font>
+
+
+![image-20211222141012794](C:\Users\86183\AppData\Roaming\Typora\typora-user-images\image-20211222141012794.png)
